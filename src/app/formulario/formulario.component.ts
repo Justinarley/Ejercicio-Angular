@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-formulario',
+  templateUrl: './formulario.component.html',
+  styleUrl: './formulario.component.css'
 })
-export class AppComponent implements OnInit {
+
+export class FormularioComponent implements OnInit {
   form: FormGroup;
   formSubmitted: boolean = false;
   msgs: any[] = [];

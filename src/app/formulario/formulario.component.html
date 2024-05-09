@@ -1,0 +1,68 @@
+<style>
+    .container {
+      margin-top: 50px;
+    }
+  
+    .p-col-8 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .p-field {
+      margin-bottom: 20px;
+    }
+  
+    .p-text-center {
+      text-align: center;
+    }
+  
+    input[type="number"]::-webkit-inner-spin-button, 
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  </style>
+  
+  <div class="container">
+    <h2 class="p-text-center">Registro</h2>
+    <div class="p-grid p-justify-center">
+      <div class="p-col-8" [formGroup]="form">
+        <div class="p-field">
+          <label for="cedula">Cédula</label>
+          <input id="cedula" type="number" pInputText formControlName="cedula" required>
+        </div>
+        <div class="p-field">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" type="text" pInputText formControlName="nombre" required>
+        </div>
+        <div class="p-field">
+          <label for="apellidos">Apellidos</label>
+          <input id="apellidos" type="text" pInputText formControlName="apellidos" required>
+        </div>
+        <div class="p-field">
+          <label for="correo">Correo</label>
+          <input id="correo" type="email" pInputText formControlName="correo" required>
+        </div>
+        <div class="p-field">
+          <label for="contrasena">Contraseña</label>
+          <input id="contrasena" type="password" pInputText formControlName="contrasena" required>
+        </div>
+        <div class="p-field">
+          <label for="fecha">Fecha de nacimiento:</label>
+          <p-calendar id="fecha" formControlName="fecha" [showIcon]="true" [readonlyInput]="true" dateFormat="yy-mm-dd" [inputStyle]="{'width': '100%'}" [style]="{'width': '100%'}" required></p-calendar>
+        </div>
+        <div class="p-field">
+          <label for="telefono">Teléfono</label>
+          <input id="telefono" type="number" pInputText formControlName="telefono" required>
+        </div>
+        <div class="p-field p-text-center">
+          <button pButton type="button" (click)="submitForm()" label="Enviar"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <p-messages [(value)]="msgs"></p-messages>
+  
+  
