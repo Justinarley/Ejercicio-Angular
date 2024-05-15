@@ -24,7 +24,10 @@ import { FormularioComponent } from './formulario.component';
     MessagesModule,
     FormsModule,
     ReactiveFormsModule,
-
+  ],
+  exports: [
+    FormularioComponent // Si quieres utilizar este componente fuera del módulo
   ]
+  
 })
 export class FormularioModule { }

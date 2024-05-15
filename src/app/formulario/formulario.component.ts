@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
-  styleUrl: './formulario.component.css'
+  styleUrls: ['./formulario.component.css']
 })
 
 export class FormularioComponent implements OnInit {
@@ -15,17 +15,19 @@ export class FormularioComponent implements OnInit {
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       cedula: ['', [Validators.required, Validators.pattern("[0-9]{10}")]],
-      nombre: ['', Validators.required],
-      apellidos: ['', Validators.required],
+      nombre: ['', [Validators.required, Validators.minLength(5)]],
+      apellidos: ['', [Validators.required, Validators.minLength(5)]],
       correo: ['', [Validators.required, Validators.email]],
       contrasena: ['', [Validators.required, Validators.pattern("12345")]],
-      fecha: [null, Validators.required],
+      // fecha: [null, Validators.required],
       telefono: ['', [Validators.required, Validators.pattern("[0-9]{9}")]]
     });
   }
 
   ngOnInit() {
   }
+
+  get f() { return this.form.controls; }
 
   submitForm() {
     this.formSubmitted = true;
