@@ -15,6 +15,7 @@ import { NavComponent } from './nav/nav.component';
 import { ContacComponent } from './contac/contac.component';
 import { FormularioModule } from "./formulario/formulario.module";
 import { ErrorComponent } from './error/error.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,8 @@ import { ErrorComponent } from './error/error.component';
         HomeComponent,
         NavComponent,
         ContacComponent,
-        ErrorComponent
+        ErrorComponent,
+        ProductListComponent
     ],
     providers: [
         provideClientHydration()

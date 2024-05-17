@@ -1,3 +1,23 @@
-h1 {
-    color: red;
-}
+.error-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  h1 {
+    font-size: 6em;
+    color: #333;
+    margin-bottom: 0;
+  }
+  
+  p {
+    font-size: 1.5em;
+    color: #777;
+    margin-top: 0.5em;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #ff6600;
+    font-weight: bold;
+  }
+  
