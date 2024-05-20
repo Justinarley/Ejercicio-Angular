@@ -15,17 +15,16 @@ export class ProductListComponent {
     this.productos = this.cartService.getProducts();
     console.log(this.productos);
   }
-  ngClickGet() : void {
-    this.cartService.getItems().subscribe(items => this.cartItems = items); 
-  }
-  onClickAdd(item : any) : void {
-    this.cartService.addItems(item).subscribe(items => this.cartItems = items); 
-  }
-  onClickDelete(itemId : any) : void {
-    this.cartService.removeItem(itemId).subscribe(() => console.log("Removido exitosamente")); 
-  }
-  onClickClear() : void {
-    this.cartService.clearCart().subscribe(() => console.log("Removido toda la lista exitosamente")); 
-  }
-
+  // ngClickGet() : void {
+  //   this.cartService.getItems().subscribe(items => this.cartItems = items); 
+  // }
+  // onClickAdd(item : any) : void {
+  //   this.cartService.addItems(item).subscribe(items => this.cartItems = items); 
+  // }
+  // onClickDelete(itemId : any) : void {
+  //   this.cartService.removeItem(itemId).subscribe(() => console.log("Removido exitosamente")); 
+  // }
+  // onClickClear() : void {
+  //   this.cartService.clearCart().subscribe(() => console.log("Removido toda la lista exitosamente")); 
+  // }
 }

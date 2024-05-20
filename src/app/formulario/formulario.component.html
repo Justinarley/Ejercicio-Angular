@@ -1,7 +1,7 @@
-<div class="container">
+<!-- <div class="container">
   <div class="formulario">
     <h2 class="p-text-center">Registro</h2>
-    <div [formGroup]="form">
+    <form [formGroup]="form" (ngSubmit)="submitForm()">
       <div class="p-field">
         <label for="cedula">Cédula: </label>
         <input id="cedula" type="number" pInputText formControlName="cedula" required>
@@ -42,13 +42,13 @@
           <div *ngIf="f['contrasena'].errors['pattern']">La contraseña es incorrecta.</div>
         </div>
       </div>
-      <!-- <div class="p-field">
+      <div class="p-field">
         <label for="fecha">Fecha de nacimiento: </label>
         <p-calendar id="fecha" formControlName="fecha" [showIcon]="true" [readonlyInput]="true" dateFormat="yy-mm-dd" [inputStyle]="{'width': '100%'}" [style]="{'width': '100%'}" required></p-calendar>
         <div *ngIf="formSubmitted && f['fecha'].errors" class="text-danger">
           <div *ngIf="f['fecha'].errors['required']">La fecha de nacimiento es requerida.</div>
         </div>
-      </div> -->
+      </div>
       <div class="p-field">
         <label for="telefono">Teléfono: </label>
         <input id="telefono" type="number" pInputText formControlName="telefono" required>
@@ -58,10 +58,9 @@
         </div>
       </div>
       <div class="p-field p-text-center">
-        <button pButton type="button" (click)="submitForm()" label="Enviar"></button>
+        <button pButton type="submit" label="Enviar"></button>
       </div>
-    </div>
+    </form>
   </div>
 </div>
-
-<p-messages [(value)]="msgs"></p-messages>
+<p-messages [(value)]="msgs"></p-messages> -->

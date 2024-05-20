@@ -1,5 +1,64 @@
-<p>contac works!</p>
+<p-messages [(value)]="msgs"></p-messages>
+<div class="container">
+  <div class="formulario">
+    <h2 class="p-text-center">Registro</h2>
+    <form [formGroup]="form" (ngSubmit)="submitForm()">
+      <div class="p-field">
+        <label for="cedula">Cédula: </label>
+        <input id="cedula" type="number" pInputText formControlName="cedula" required>
+        <div *ngIf="formSubmitted && f['cedula'].errors" class="text-danger">
+          <div *ngIf="f['cedula'].errors['required']">La cédula es requerida.</div>
+          <div *ngIf="f['cedula'].errors['pattern']">La cédula debe contener 10 dígitos numéricos.</div>
+        </div>
+      </div>
+      <div class="p-field">
+        <label for="nombre">Nombre: </label>
+        <input id="nombre" type="text" pInputText formControlName="nombre" required>
+        <div *ngIf="formSubmitted && f['nombre'].errors" class="text-danger">
+          <div *ngIf="f['nombre'].errors['required']">El nombre es requerido.</div>
+          <div *ngIf="f['nombre'].errors['minlength']">El nombre debe tener al menos 5 caracteres.</div>
+        </div>
+      </div>
+      <div class="p-field">
+        <label for="apellidos">Apellidos: </label>
+        <input id="apellidos" type="text" pInputText formControlName="apellidos" required>
+        <div *ngIf="formSubmitted && f['apellidos'].errors" class="text-danger">
+          <div *ngIf="f['apellidos'].errors['required']">Los apellidos son requeridos.</div>
+          <div *ngIf="f['apellidos'].errors['minlength']">Los apellidos deben tener al menos 5 caracteres.</div>
+        </div>
+      </div>
+      <div class="p-field">
+        <label for="correo">Correo: </label>
+        <input id="correo" type="email" pInputText formControlName="correo" required>
+        <div *ngIf="formSubmitted && f['correo'].errors" class="text-danger">
+          <div *ngIf="f['correo'].errors['required']">El correo es requerido.</div>
+          <div *ngIf="f['correo'].errors['email']">El correo debe ser válido.</div>
+        </div>
+      </div>
+      <!-- <div class="p-field">
+        <label for="contrasena">Contraseña: </label>
+        <input id="contrasena" type="password" pInputText formControlName="contrasena" required>
+        <div *ngIf="formSubmitted && f['contrasena'].errors" class="text-danger">
+          <div *ngIf="f['contrasena'].errors['required']">La contraseña es requerida.</div>
+          <div *ngIf="f['contrasena'].errors['pattern']">La contraseña es incorrecta.</div>
+        </div>
+      </div> -->
+      <div class="p-field">
+        <label for="telefono">Teléfono: </label>
+        <input id="telefono" type="number" pInputText formControlName="telefono" required>
+        <div *ngIf="formSubmitted && f['telefono'].errors" class="text-danger">
+          <div *ngIf="f['telefono'].errors['required']">El teléfono es requerido.</div>
+          <div *ngIf="f['telefono'].errors['pattern']">El teléfono debe contener 9 dígitos numéricos.</div>
+        </div>
+      </div>
+      <div class="p-field p-text-center">
+        <button pButton type="submit" label="Enviar"></button>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- <p>contac works!</p>
 <h2>Contacto</h2>
 <ul>
   <li *ngFor="let contact of contacts">{{ contact }}</li>
-</ul>
+</ul> -->

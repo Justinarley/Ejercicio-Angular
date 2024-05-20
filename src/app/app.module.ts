@@ -16,6 +16,9 @@ import { ContacComponent } from './contac/contac.component';
 import { FormularioModule } from "./formulario/formulario.module";
 import { ErrorComponent } from './error/error.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AboutComponent } from './about/about.component';
+import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
     declarations: [
@@ -24,7 +27,9 @@ import { ProductListComponent } from './product-list/product-list.component';
         NavComponent,
         ContacComponent,
         ErrorComponent,
-        ProductListComponent
+        ProductListComponent,
+        AboutComponent,
+        PostsComponent
     ],
     providers: [
         provideClientHydration()
@@ -42,7 +47,8 @@ import { ProductListComponent } from './product-list/product-list.component';
         FormsModule,
         ReactiveFormsModule,
         BrowserAnimationsModule,
-        FormularioModule
+        FormularioModule,
+        HttpClientModule 
     ]
 })
 export class AppModule { }

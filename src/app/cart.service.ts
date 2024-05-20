@@ -15,25 +15,24 @@ export class CartService {
   getProducts() {
     return [ 'Chocolate' , 'Cookie' , 'Dulce de leche'];
   }
+  // private apiUrl = 'http://api.myecommerce.com';
 
-  private apiUrl = 'http://api.myecommerce.com';
+  // constructor(private http:HttpClient) {}
 
-  constructor(private http:HttpClient) {}
-
-  getItems(): Observable<any[]>{
-  const url = `${this.apiUrl}/cart/items`;
-  return this.http.get<any[ ]>(url);
-  }
-  addItems(item: any): Observable<any> {
-  const url = `${this.apiUrl}/cart/add`;
-  return this.http.post(url,item);
-  }
-  removeItem(id: number): Observable<any> {
-    const url = `${this.apiUrl}/cart/delete/${id}`;
-    return this.http.delete<void>(url);
-  }
-  clearCart(): Observable<any> {
-    const url = `${this.apiUrl}/cart/clear`;
-    return this.http.delete<void>(url);
-  }
+  // getItems(): Observable<any[]>{
+  // const url = `${this.apiUrl}/cart/items`;
+  // return this.http.get<any[ ]>(url);
+  // }
+  // addItems(item: any): Observable<any> {
+  // const url = `${this.apiUrl}/cart/add`;
+  // return this.http.post(url,item);
+  // }
+  // removeItem(id: number): Observable<any> {
+  //   const url = `${this.apiUrl}/cart/delete/${id}`;
+  //   return this.http.delete<void>(url);
+  // }
+  // clearCart(): Observable<any> {
+  //   const url = `${this.apiUrl}/cart/clear`;
+  //   return this.http.delete<void>(url);
+  // }
 }
