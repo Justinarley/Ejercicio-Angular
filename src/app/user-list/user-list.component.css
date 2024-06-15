@@ -1,0 +1,81 @@
+.container {
+    margin: 20px auto;
+    max-width: 800px;
+  }
+  
+  .formulario, .usuario-encontrado, .heading {
+    margin-bottom: 20px;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .btn {
+    margin-right: 5px;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #fff; /* Cambio de color de texto a blanco */
+  }
+  
+  .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #fff; /* Cambio de color de texto a blanco */
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff; /* Cambio de color de texto a blanco */
+  }
+  
+  .btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+  
+  .mt-2 {
+    margin-top: 10px;
+  }
+  
+  .mt-4 {
+    margin-top: 20px;
+  }
+  
+  .text-danger {
+    color: #dc3545;
+  }
+  
+  .edit-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .edit-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .edit-form .btn {
+    margin-right: 10px;
+  }
+  

@@ -1,0 +1,98 @@
+<div class="container">
+    <div class="formulario">
+      <h2 class="text-center">Buscar Usuario por ID</h2>
+      <form [formGroup]="searchForm" (ngSubmit)="searchUserById()">
+        <div class="form-group">
+          <label for="id">ID de Usuario:</label>
+          <input id="id" type="number" pInputText formControlName="id" class="form-control">
+          <div *ngIf="searchForm.get('id')?.invalid && searchForm.get('id')?.touched" class="text-danger">
+            Por favor, ingresa un ID válido.
+          </div>
+        </div>
+        <button type="submit" pButton label="Buscar" class="btn btn-primary mt-2"></button>
+      </form>
+    </div>
+
+      <!-- Mostrar mensaje de error -->
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+    {{ errorMessage }}
+  </div>
+  
+    <!-- Usuario encontrado -->
+    <div *ngIf="foundUser" class="usuario-encontrado mt-4">
+      <h2 class="text-center">Usuario Encontrado</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Cédula</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>{{ foundUser.cedula }}</strong></td>
+            <td>{{ foundUser.nombre }}</td>
+            <td>{{ foundUser.apellidos }}</td>
+            <td>{{ foundUser.correo }}</td>
+            <td>{{ foundUser.telefono }}</td>
+            <td>
+              <button (click)="editarUsuario(foundUser)" pButton label="Editar" class="btn btn-success btn-sm"></button>
+              <button (click)="eliminarUsuario(foundUser.id)" pButton label="Eliminar" class="btn btn-danger btn-sm"></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <h2 class="text-center mt-4">Lista de Usuarios</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Cédula</th>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Correo</th>
+          <th>Teléfono</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <td><strong>{{ user.cedula }}</strong></td>
+          <td>{{ user.nombre }}</td>
+          <td>{{ user.apellidos }}</td>
+          <td>{{ user.correo }}</td>
+          <td>{{ user.telefono }}</td>
+          <td>
+            <button (click)="editarUsuario(user)" pButton label="Editar" class="btn btn-success btn-sm"></button>
+            <button (click)="eliminarUsuario(user.id)" pButton label="Eliminar" class="btn btn-danger btn-sm"></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div *ngIf="showEditForm" class="edit-container mt-4">
+      <h2 class="heading text-center">Editar Usuario</h2>
+      <form [formGroup]="editForm" (ngSubmit)="submitEditForm()" class="edit-form">
+        <div class="form-group">
+          <label for="editCorreo" class="form-label">Correo:</label>
+          <input type="email" class="form-control" id="editCorreo" formControlName="correo" required>
+        </div>
+        <div class="form-group">
+          <label for="editTelefono" class="form-label">Teléfono:</label>
+          <input type="text" class="form-control" id="editTelefono" formControlName="telefono" required>
+        </div>
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary mt-2">Guardar Cambios</button>
+            <button type="button" class="btn btn-danger mt-2" (click)="cancelEdit()">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

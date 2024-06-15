@@ -1,12 +1,12 @@
-<div>
-    <h1>Bienvenido a la pagina principal</h1>
-    <div>
-        <p>Para poder hacer uso de nuestro sistema debes realizar el debido registro para poder logiarte</p>
-        <a routerLink="/contacto" >Haz click aqui</a>
-        <img src="assets/images/bienvenida.jpeg" alt="login">
-        <h2>Contacto</h2>
-        <ul>
-        <li *ngFor="let contact of contacts">{{ contact }}</li>
-        </ul> 
+<div class="main-container">
+    <h1 class="title">Bienvenido a la página principal</h1>
+    <div class="content">
+        <p class="description">Para poder hacer uso de nuestro sistema debes realizar el debido registro para poder logiarte.</p>
+        <a class="contact-link" routerLink="/contacto">Haz click aquí</a>
+        <img class="welcome-image" src="assets/images/bienvenida.jpeg" alt="login">
+        <h2 class="subtitle">Contacto</h2>
+        <ul class="contact-list">
+            <li *ngFor="let contact of contacts">{{ contact }}</li>
+        </ul>
     </div>
 </div>

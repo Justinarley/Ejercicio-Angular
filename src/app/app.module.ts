@@ -15,10 +15,11 @@ import { NavComponent } from './nav/nav.component';
 import { ContacComponent } from './contac/contac.component';
 import { FormularioModule } from "./formulario/formulario.module";
 import { ErrorComponent } from './error/error.component';
-import { ProductListComponent } from './product-list/product-list.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { AboutComponent } from './about/about.component';
 import { PostsComponent } from './posts/posts.component';
+import { UserListComponent } from './user-list/user-list.component';
+
 
 @NgModule({
     declarations: [
@@ -27,12 +28,12 @@ import { PostsComponent } from './posts/posts.component';
         NavComponent,
         ContacComponent,
         ErrorComponent,
-        ProductListComponent,
         AboutComponent,
-        PostsComponent
+        PostsComponent,
+        UserListComponent
     ],
     providers: [
-        provideClientHydration()
+        provideHttpClient(withFetch()),
     ],
     bootstrap: [AppComponent],
     imports: [
